@@ -29,32 +29,32 @@ if (!defined('ABSPATH')) {
  * @since 1.0.0
  */
 
-function slm_block_register_block_type($block_slug, $call_back_function)
-{
+// function slm_block_register_block_type($block_slug, $call_back_function)
+// {
 
-	/**
-	 * Register Gutenberg block on server-side.
-	 *
-	 * Register the block on server-side to ensure that the block
-	 * scripts and styles for both frontend and backend are
-	 * enqueued when the editor loads.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type#enqueuing-block-scripts
-	 * @since 1.16.0
-	 */
-	register_block_type(
-		'slm-block/' . $block_slug,
-		array(
-			// Enqueue blocks.style.build.css on both frontend & backend.
-			'style'         => 'slm_block-cgb-style-css',
-			// Enqueue blocks.build.js in the editor only.
-			'editor_script' => 'slm_block-cgb-block-js',
-			// Enqueue blocks.editor.build.css in the editor only.
-			'editor_style'  => 'slm_block-cgb-block-editor-css',
-			'render_callback' => $call_back_function
-		)
-	);
-}
+// 	/**
+// 	 * Register Gutenberg block on server-side.
+// 	 *
+// 	 * Register the block on server-side to ensure that the block
+// 	 * scripts and styles for both frontend and backend are
+// 	 * enqueued when the editor loads.
+// 	 *
+// 	 * @link https://wordpress.org/gutenberg/handbook/blocks/writing-your-first-block-type#enqueuing-block-scripts
+// 	 * @since 1.16.0
+// 	 */
+// 	register_block_type(
+// 		'slm-block/' . $block_slug,
+// 		array(
+// 			// Enqueue blocks.style.build.css on both frontend & backend.
+// 			'style'         => 'slm_block-cgb-style-css',
+// 			// Enqueue blocks.build.js in the editor only.
+// 			'editor_script' => 'slm_block-cgb-block-js',
+// 			// Enqueue blocks.editor.build.css in the editor only.
+// 			'editor_style'  => 'slm_block-cgb-block-editor-css',
+// 			'render_callback' => $call_back_function
+// 		)
+// 	);
+// }
 
 function slm_block_cgb_block_assets()
 { // phpcs:ignore
@@ -94,10 +94,10 @@ function slm_block_cgb_block_assets()
 		]
 	);
 
-	slm_block_register_block_type('latest-post', 'render_posts_block');
+	// slm_block_register_block_type('latest-post', 'render_posts_block');
 }
 
 // Hook: Block assets.
 add_action('init', 'slm_block_cgb_block_assets');
 
-require_once plugin_dir_path(__FILE__) . 'inc/slm-block-render-call-backs.php';
+// require_once plugin_dir_path(__FILE__) . 'inc/slm-block-render-call-backs.php';
